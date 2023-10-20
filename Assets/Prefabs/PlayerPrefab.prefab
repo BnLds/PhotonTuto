@@ -51,6 +51,8 @@ MonoBehaviour:
   _interpolationDataSource: 0
   _prefabBall: {fileID: 2216162986529984962, guid: f5077364c8d9d6a4f8b0b773c9922da1,
     type: 3}
+  _prefabPhysxBall: {fileID: 4829196240364303990, guid: bcc94386556f7d54387a3b86ae1e31f3,
+    type: 3}
 --- !u!114 &6891117536823396185
 MonoBehaviour:
   m_ObjectHideFlags: 0

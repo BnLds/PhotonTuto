@@ -12,10 +12,12 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     private NetworkRunner _runner;
     private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new();
     private bool _mouseButton0;
+    private bool _mouseButton1;
 
     private void Update()
     {
         _mouseButton0 = _mouseButton0 | Input.GetMouseButton(0);
+        _mouseButton1 = _mouseButton1 | Input.GetMouseButton(1);
     }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) 
@@ -60,6 +62,10 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
         if (_mouseButton0)
             data.Buttons |= NetworkInputData.MOUSE_BUTTON_1;
         _mouseButton0 = false;
+
+        if (_mouseButton1)
+            data.Buttons |= NetworkInputData.MOUSE_BUTTON_2;
+        _mouseButton1 = false;
 
         input.Set(data);
     }
